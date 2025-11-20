@@ -1,7 +1,0 @@
-{
-  "typescript": true,
-  "webDir": "www",
-  "android": {
-    "buildCommand": "npm run build"
-  }
-}
