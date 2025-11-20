@@ -4,12 +4,11 @@
   "author": "Ionic Framework",
   "homepage": "https://ionicframework.com/",
   "scripts": {
-    "ng": "node ./node_modules/@angular/cli/bin/ng",
-    "start": "node ./node_modules/@angular/cli/bin/ng serve",
-    "build": "node ./node_modules/@angular/cli/bin/ng build",
-    "watch": "node ./node_modules/@angular/cli/bin/ng build --watch --configuration development",
-    "test": "node ./node_modules/@angular/cli/bin/ng test",
-    "lint": "node ./node_modules/@angular/cli/bin/ng lint"
+  "start": "npx ng serve", 
+  "build": "npx ng build",
+  "watch": "npx ng build --watch --configuration development",
+  "test": "npx ng test",
+  "lint": "npx ng lint"
   },
   "private": true,
   "dependencies": {
