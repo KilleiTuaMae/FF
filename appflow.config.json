@@ -3,5 +3,9 @@
   "webDir": "www",
   "android": {
     "buildCommand": "npm run build"
-  }
+  },
+  "ios": {
+    "buildCommand": "npm run build"
+  },
+  "liveUpdates": {} 
 }
