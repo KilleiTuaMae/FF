@@ -4,8 +4,9 @@
   "author": "Ionic Framework",
   "homepage": "https://ionicframework.com/",
   "scripts": {
+  "prebuild": "chmod +x ./node_modules/.bin/ng && chmod +x ./node_modules/.bin/cap",
   "start": "ng serve", 
-  "build": "./node_modules/@angular/cli/bin/ng build",
+  "build": "ng build",
   "watch": "ng build --watch --configuration development", 
   "test": "ng test",
   "lint": "ng lint",
