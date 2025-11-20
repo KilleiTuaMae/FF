@@ -5,8 +5,9 @@
   "homepage": "https://ionicframework.com/",
   "scripts": {
     "ng": "ng",
+    "prebuild": "chmod +x ./node_modules/.bin/ng && chmod +x ./node_modules/.bin/cap",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --configuration=production --base-href ./",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "ng lint"
