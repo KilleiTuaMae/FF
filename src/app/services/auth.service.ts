@@ -69,17 +69,20 @@ export class AuthService {
 
   private async initializeAuth() {
     try {
-      if (typeof __initial_auth_token !== 'undefined') {
-        await signInWithCustomToken(this.auth, __initial_auth_token);
+      const token = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : '';
+      
+      if (token && token.length > 5) {
+        await signInWithCustomToken(this.auth, token);
         console.log('Firebase: Autenticação com token customizado efetuada.');
       } else {
         await signInAnonymously(this.auth);
-        console.log('Firebase: Autenticação anônima efetuada.');
+        console.log('Firebase: Autenticação anônima efetuada (Token inicial inválido/ausente).');
       }
     } catch (error) {
-      console.error('Erro na autenticação inicial do Firebase:', error);
+      console.error('Erro na autenticação inicial do Firebase (tentando fallback):', error);
       try {
         await signInAnonymously(this.auth);
+        console.log('Firebase: Autenticação anônima efetuada via fallback.');
       } catch (e) {
         console.error('Erro no fallback de autenticação anônima:', e);
       }
