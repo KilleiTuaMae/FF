@@ -4,12 +4,13 @@
   "author": "Ionic Framework",
   "homepage": "https://ionicframework.com/",
   "scripts": {
-    "ng": "node ./node_modules/@angular/cli/bin/ng",
-    "start": "node ./node_modules/@angular/cli/bin/ng serve",
-    "build": "node ./node_modules/@angular/cli/bin/ng build",
-    "watch": "node ./node_modules/@angular/cli/bin/ng build --watch --configuration development",
-    "test": "node ./node_modules/@angular/cli/bin/ng test",
-    "lint": "node ./node_modules/@angular/cli/bin/ng lint"
+    "prebuild": "chmod +x ./node_modules/.bin/ng && chmod +x ./node_modules/.bin/cap",
+    "start": "ng serve",
+    "build": "ng build --configuration=production --base-href ./",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test",
+    "lint": "ng lint",
+    "cap": "cap"
   },
   "private": true,
   "dependencies": {
@@ -44,6 +45,7 @@
     "@angular/cli": "^20.0.0",
     "@angular/compiler-cli": "^20.0.0",
     "@angular/language-service": "^20.0.0",
+    "@capacitor/android": "^7.4.4",
     "@capacitor/cli": "7.4.4",
     "@ionic/angular-toolkit": "^12.0.0",
     "@types/jasmine": "~5.1.0",
